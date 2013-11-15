@@ -1,0 +1,41 @@
+//* enemy attack script*//
+{   var target;
+    
+    switch (facing)
+    {
+        case RIGHT:
+            target = instance_position(x+64,y,oPlayer);
+        break;
+        case UPRIGHT:
+            target = instance_position(x+32,y-32,oPlayer);
+        break;
+       
+         case UP:
+            target = instance_position(x,y-64,oPlayer);
+        break;
+       
+         case UPLEFT:
+            target = instance_position(x-32,y-32,oPlayer);
+        break;
+        case LEFT:
+            target = instance_position(x-64,y,oEnemy);
+        break;
+            
+         case DOWNLEFT:
+            target = instance_position(x-32,y+32,oEnemy);
+        break;
+       
+         case DOWN:
+            target = instance_position(x,y+64,oEnemy);
+        break;
+       
+         case DOWNRIGHT:
+            target = instance_position(x+32,y+32,oEnemy);
+        break;
+        
+    }
+    if (target != noone)
+    {
+        target.currentHp -= 10;
+    }
+}
